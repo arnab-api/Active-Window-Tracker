@@ -105,7 +105,7 @@ while True:
 
     except Xlib.error.BadWindow:
         print("Window vanished")
-    time.sleep(1)
+    time.sleep(.1)
 
 cv2.destroyWindow("preview")
 
