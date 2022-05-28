@@ -1,8 +1,6 @@
 # Demonstration
 Tested with **Dabian** based linux distributions only
-
-<!-- ![](demo.gif) -->
-<img src="demo.gif" width="50%"/>
+<img src="demo.gif" width="100%"/>
 
 # Instructions
 - Import the tested `conda` environment with <br>
