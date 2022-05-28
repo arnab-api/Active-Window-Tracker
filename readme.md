@@ -1,6 +1,7 @@
 # Demonstration
 Tested with **Dabian** based linux distributions only
-<img src="demo.gif" width="100%"/>
+
+<img src="demo.gif" width="500px"/>
 
 # Instructions
 - Import the tested `conda` environment with <br>
