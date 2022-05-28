@@ -1,27 +1,11 @@
 import pyscreenshot as ImageGrab
 
-# from Xlib import display
-
-# d = display.Display()
-# root = d.screen().root
-
-# query = root.query_tree()
-
-# for c in query.children:
-#     # returns window name or None
-#     name = c.get_wm_name()
-#     if name: 
-#         print(name)
-
-# Print the name and bounding box (x1, y1, x2, y2) for the active window in
-# a loop.
-
 import time
 from collections import namedtuple
 
 import Xlib
 import Xlib.display
-import imutils
+# import imutils
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -79,9 +63,9 @@ image = ImageGrab.grab()
 image = np.array(image)
 # image = imutils.resize(image, width=1080)
 image = cv2.resize(image, image_dims)
-cv2.namedWindow("preview")
+cv2.namedWindow("Tracker")
 print(type(image))
-cv2.imshow("preview", image)
+cv2.imshow("Tracker", image)
 
 while True:
     # Protect against races when the window gets destroyed before we
@@ -93,7 +77,7 @@ while True:
         bbox = get_window_bbox(win)
         print(win.get_wm_name(), bbox)
 
-        cv2.imshow("preview", image)
+        cv2.imshow("Tracker", image)
         image = ImageGrab.grab(bbox=bbox)
         image = np.array(image)
         # image = imutils.resize(image, width=1080)
@@ -107,14 +91,4 @@ while True:
         print("Window vanished")
     time.sleep(.1)
 
-cv2.destroyWindow("preview")
-
-
-# im = ImageGrab.grab(bbox=(638, 120, 1424, 653))
-# im = np.array(im)
-# print(im.shape)
-# im = cv2.resize(im, image_dims)
-# print(im.shape)
-# # im.show()
-# plt.imshow(im)
-# plt.show()
+cv2.destroyWindow("Tracker")
